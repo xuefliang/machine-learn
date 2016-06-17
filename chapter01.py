@@ -17,4 +17,4 @@ if __name__=="__main__":
     plt.legend(loc='upper left') #左上角
     plt.xlabel('x')
     plt.ylabel('log(x)')
-    plt.show
+    plt.show()
