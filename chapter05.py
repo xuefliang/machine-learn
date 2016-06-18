@@ -43,3 +43,22 @@ for i in range(1, 1000, 1):
 
 plt.scatter(m[:1000], n[:1000])
 plt.show()
+
+"""
+已知有个rand7()的函数，返回1-7的随机自然数，让利用这个rand7()构造rand10()随机数1-10
+"""
+
+
+def rand7():
+    return random.randint(1, 7)
+
+def rand10():
+    r = 0
+    while True:
+        r = (rand7() - 1) * 7 + (rand7() - 1)
+        if r < 40:
+            r = r / 4 + 1
+            break
+    return r
+
+print rand10()
