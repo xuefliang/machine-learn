@@ -61,3 +61,18 @@ def rand10():
     return r
 
 print rand10()
+
+"""
+均匀
+"""
+
+x=[0 for x in range(0,1000,1)]
+y=[0 for y in range(0,1000,1)]
+for i in range(1,1000,1):
+    r=math.sqrt(random.randint(0,2500)) #开方 k*pi*r**2
+    theta=random.uniform(0,2*math.pi)  #弧度0-2*pi
+    x[i]=r*math.cos(theta)
+    y[i]=r*math.sin(theta)
+
+plt.scatter(x[:1000],y[:1000])
+plt.show()
