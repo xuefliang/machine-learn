@@ -48,7 +48,6 @@ plt.show()
 已知有个rand7()的函数，返回1-7的随机自然数，让利用这个rand7()构造rand10()随机数1-10
 """
 
-
 def rand7():
     return random.randint(1, 7)
 
