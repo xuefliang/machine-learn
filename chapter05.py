@@ -76,3 +76,29 @@ for i in range(1,1000,1):
 
 plt.scatter(x[:1000],y[:1000])
 plt.show()
+
+"""
+幂运算
+"""
+def Pow(x, n):
+    if (n == 0):
+        return 1
+    elif (n == 1):
+        return x
+    elif (n == 2):
+        return x ** x
+    p = Pow(x, n / 2)
+    p *= p
+    if (n % 2 == 0):
+        return p
+    else:
+        return p * x
+
+def Power(x, n):
+    if (n < 0):
+        return 1 / Pow(x, -n)
+    else:
+        return Pow(x, n)
+
+
+Power(0.5, -2)
