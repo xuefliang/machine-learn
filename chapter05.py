@@ -101,4 +101,4 @@ def Power(x, n):
         return Pow(x, n)
 
 
-Power(0.5, -2)
+Power(1.01, -2)
