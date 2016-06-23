@@ -6,43 +6,14 @@
 @time: 2016-6-21 17:26
 """
 from locale import normalize
+
 from numpy import gradient
-
-#w当前值，g当前梯度方向，a当前学习率，data数据
-def calcAlpha(w, g, alpha, data):
-	c1=0.3
-	now=fw(w,data)
-	wNext=assign(w)
-	numberProduct(a,g,wNext)
-	next=fw(wNext,data)
-	#寻找足够大的a，使得h(a)>0
-	count=30
-	while next <now:
-		a*=2
-		wNext=assign(w)
-		numberProduct(a,g,wNext)
-		next=fw(wNext,data)
-		count-=1
-		if count ==0:
-			break
-	#寻找合适的学习率a
-	count=50
-	while next>now-c1*a*dotProduct(g,g):
-		a/=2
-		wNext=assign(w)
-		numberProduct(a,g,wNext)
-		next=fw(wNext,data)
-		count-=1
-		if count==0:
-			break
-	return a
-
 
 
 def calcCoefficient(data,listA,listW,listLostFunction):
 	N=len(data[0]) #维度
-	w=[0 for in range(N)]
-	wNew=[0 for i in range(N)]
+	W=[0 for in range(N)]
+	WNew=[0 for i in range(N)]
 	g=[0 for i in range(N)]
 
 	times=0
@@ -59,14 +30,10 @@ def calcCoefficient(data,listA,listW,listLostFunction):
 		print "times,alpha,fw,w,g:\t",times,alpha,fw(w,data),w,g
 		if isSame(w,wNew):
 			break
-		assign2(2,wNew) #更新权值
+		assign2(2,wNew)
 		times +=1
 
 		listA.append(alpha)
 		listW.append(assign(w))
 		listLostFunction.append(fw(w,data))
 	return w
-
-"""
-随机梯度下降SGD
-"""
